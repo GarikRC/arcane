@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>${name}</string>
+    <key>CFBundleVersion</key>
+    <string>${version}</string>
+    <key>CFBundleAllowMixedLocalizations</key>
+    <string>${allowMixedLocalizations}</string>
+    <key>CFBundleExecutable</key>
+    <string>${executable}</string>
+#if($identifier)
+    <key>CFBundleIdentifier</key>
+    <string>${identifier}</string>
+#end
+#if($getInfoString)
+    <key>CFBundleGetInfoString</key>
+    <string>${getInfoString}</string>
+#end
+    <key>CFBundleDevelopmentRegion</key>
+    <string>${developmentRegion}</string>
+    <key>CFBundlePackageType</key>
+    <string>${packageType}</string>
+    <key>CFBundleSignature</key>
+    <string>${signature}</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>${infoDictionaryVersion}</string>
+    <key>CFBundleIconFile</key>
+    <string>${iconFile}</string>
+    <key>Java</key>
+    <dict>
+        <key>MainClass</key>
+        <string>${mainClass}</string>
+        <key>JVMVersion</key>
+        <string>${jvmVersion}</string>
+        <key>ClassPath</key>
+        ${classpath}
+        <key>WorkingDirectory</key>
+        <string>${workingDirectory}</string>
+#if($vmOptions)
+        <key>VMOptions</key>
+        <string>${vmOptions}</string>
+#end
+#if($startOnFirstThread)
+        <key>StartOnMainThread</key>
+        <true />
+#end
+        <key>Properties</key>
+        <dict>
+            <key>apple.laf.useScreenMenuBar</key>
+            <string>${useScreenMenuBar}</string>
+#if(!$antiAliasText)
+            <key>apple.awt.textantialiasing</key>
+            <string>${antiAliasText}</string>
+#end
+#if(!$antiAliasGraphics)
+            <key>apple.awt.antialiasing</key>
+            <string>${antiAliasGraphics}</string>
+#end
+        </dict>
+    </dict>
+</dict>
+</plist>

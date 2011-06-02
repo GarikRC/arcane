@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>osxappbundle-maven-plugin</artifactId>
+  <versioning>
+    <latest>1.0-alpha-3-SNAPSHOT</latest>
+    <versions>
+      <version>1.0-alpha-3-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20110303221507</lastUpdated>
+  </versioning>
+</metadata>

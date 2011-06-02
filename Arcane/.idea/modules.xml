@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/arcane.iml" filepath="$PROJECT_DIR$/arcane.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArcaneDeckbuilder/arcane-deckbuilder.iml" filepath="$PROJECT_DIR$/ArcaneDeckbuilder/arcane-deckbuilder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CardGenerator/cardgenerator.iml" filepath="$PROJECT_DIR$/CardGenerator/cardgenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CrystalKeepRulings/crystalkeeprulings.iml" filepath="$PROJECT_DIR$/CrystalKeepRulings/crystalkeeprulings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MagicCardsInfo/magiccardsinfo.iml" filepath="$PROJECT_DIR$/MagicCardsInfo/magiccardsinfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MagicTraders/magictraders.iml" filepath="$PROJECT_DIR$/MagicTraders/magictraders.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MTGVault/mtgvault.iml" filepath="$PROJECT_DIR$/MTGVault/mtgvault.iml" />
+    </modules>
+  </component>
+</project>
+
