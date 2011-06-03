@@ -11,7 +11,7 @@
     <url>http://maven.apache.org</url>
 
     <scm>
-        <connection>scm:svn:http:///arcane.googlecode.com/svn/trunk/maven/helloworld</connection>
+        <connection>scm:svn:https:///arcane.googlecode.com/svn/trunk/maven/helloworld</connection>
         <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/maven/helloworld
         </developerConnection>
     </scm>
