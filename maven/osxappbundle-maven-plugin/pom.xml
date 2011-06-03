@@ -10,7 +10,7 @@
 
     <artifactId>osxappbundle-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>1.0-alpha-3</version>
+    <version>1.0-alpha-3-SNAPSHOT</version>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -23,14 +23,13 @@
     <description>A Maven Plugin for generating Mac OS X Application Bundles of Java applications and packaging them as a
         DMG disk image.
     </description>
-    <url>http://mojo.codehaus.org/osxappbundle-maven-plugin/</url>
     <prerequisites>
         <maven>2.2.1</maven>
     </prerequisites>
 
     <scm>
-        <connection>scm:svn:http://svn.codehaus.org/mojo/tags/osxappbundle-maven-plugin-1.0-alpha-3</connection>
-        <developerConnection>scm:svn:https://svn.codehaus.org/mojo/tags/osxappbundle-maven-plugin-1.0-alpha-3
+        <connection>scm:svn:http://arcane.googlecode.com/svn/trunk/repository/osxappbundle-maven-plugin-1.0-alpha-3</connection>
+        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/repository/osxappbundle-maven-plugin-1.0-alpha-3
         </developerConnection>
     </scm>
 
