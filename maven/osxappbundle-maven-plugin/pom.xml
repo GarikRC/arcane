@@ -28,8 +28,8 @@
     </prerequisites>
 
     <scm>
-        <connection>scm:svn:http://svn.codehaus.org/mojo/tags/osxappbundle-maven-plugin-1.0-alpha-3</connection>
-        <developerConnection>scm:svn:https://svn.codehaus.org/mojo/tags/osxappbundle-maven-plugin-1.0-alpha-3
+        <connection>scm:svn:http:///arcane.googlecode.com/svn/trunk/repository/osxappbundle-maven-plugin</connection>
+        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/repository/osxappbundle-maven-plugin
         </developerConnection>
     </scm>
 
