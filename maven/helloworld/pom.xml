@@ -136,7 +136,7 @@
         <repository>
             <id>arcane-maven-repo</id>
             <name>Arcane</name>
-            <url>https://arcane.googlecode.com/svn/trunk/repository</url>
+            <url>dav:http://arcane.googlecode.com/svn/trunk/repository</url>
         </repository>
     </distributionManagement>
 </project>
