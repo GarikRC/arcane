@@ -98,6 +98,19 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.6</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.google.code.maven-svn-wagon</groupId>
+                        <artifactId>maven-svn-wagon</artifactId>
+                        <version>1.4</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
 
@@ -107,6 +120,12 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+
+                <dependency>
+            <groupId>com.google.code.maven-svn-wagon</groupId>
+            <artifactId>maven-svn-wagon</artifactId>
+            <version>1.4</version>
         </dependency>
 
         <dependency>
@@ -136,7 +155,7 @@
         <repository>
             <id>arcane-maven-repo</id>
             <name>Arcane</name>
-            <url>dav:http://arcane.googlecode.com/svn/trunk/repository</url>
+            <url>svn:http://arcane.googlecode.com/svn/trunk/repository</url>
         </repository>
     </distributionManagement>
 </project>
