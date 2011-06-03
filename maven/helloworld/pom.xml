@@ -106,7 +106,15 @@
                 <groupId>com.googlecode.maven-gcu-plugin</groupId>
                 <artifactId>maven-gcu-plugin</artifactId>
                 <version>1.1</version>
+                <executions>
+                    <execution>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
                 <configuration>
+
+                    <failsOnError>true</failsOnError> <!-- default: false -->
+                    <projectName>arcane</projectName> <!-- default: ${project.artifactId} -->
                     <uploads>
                         <upload>
                             <file>
