@@ -137,6 +137,15 @@
         </dependency>
 
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>arcane-maven-repo</id>
+            <name>Arcane</name>
+            <url>http://arcane.googlecode.com/svn/trunk/repository</url>
+        </repository>
+    </distributionManagement>
+
     <reporting>
         <plugins>
             <plugin>
