@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.googlecode.arcane</groupId>
@@ -72,13 +73,18 @@
                         <phase>package</phase>
                         <configuration>
                             <tasks>
-                                <taskdef name="jarbundler" classpathref="maven.compile.classpath" classname="net.sourceforge.jarbundler.JarBundler" />
+                                <taskdef name="jarbundler" classpathref="maven.compile.classpath"
+                                         classname="net.sourceforge.jarbundler.JarBundler"/>
 
                                 <!-- jarbundler is from sourceforge, defined near top of file -->
-                                <jarbundler dir="${project.build.directory}" name="${project.name}" version="${project.version}" mainclass="com.googlecode.arcane.HelloWorld" icon="src/main/resources/Forge.icns" jvmversion="1.5+" shortname="${project.name}" jar="${project.build.directory}/${project.artifactId}-${project.version}.jar">
+                                <jarbundler dir="${project.build.directory}" name="${project.name}"
+                                            version="${project.version}" mainclass="com.googlecode.arcane.HelloWorld"
+                                            icon="src/main/resources/Forge.icns" jvmversion="1.5+"
+                                            shortname="${project.name}"
+                                            jar="${project.build.directory}/${project.artifactId}-${project.version}.jar">
 
 
-                                    <javafileset dir="${basedir}/src/main/resources" includes="*.properties" />
+                                    <javafileset dir="${basedir}/src/main/resources" includes="*.properties"/>
                                 </jarbundler>
                             </tasks>
                         </configuration>
@@ -101,10 +107,60 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
+            <plugin>
+                <groupId>com.googlecode.maven-gcu-plugin</groupId>
+                <artifactId>maven-gcu-plugin</artifactId>
+                <version>1.1</version>
+                <configuration>
+                    <uploads>
+                        <upload>
+                            <file>
+                                ${project.build.directory}/${project.artifactId}-${project.version}.${project.packaging}
+                            </file>
+                            <summary>${project.name} sources bundle ${project.version}</summary>
+                            <labels>
+                                <label>Featured</label>
+                                <label>Type-Archive</label>
+                            </labels>
+                        </upload>
+                    </uploads>
+                </configuration>
+            </plugin>
         </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.googlecode.maven-gcu-plugin</groupId>
+                    <artifactId>maven-gcu-plugin</artifactId>
+                    <version>1.1</version>
+                </plugin>
+
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>1.6</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>com.google.code.maven-svn-wagon</groupId>
+            <artifactId>maven-svn-wagon</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.jarbundler</groupId>
+            <artifactId>jarbundler</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -112,27 +168,12 @@
             <scope>test</scope>
         </dependency>
 
-                <dependency>
-            <groupId>com.google.code.maven-svn-wagon</groupId>
-            <artifactId>maven-svn-wagon</artifactId>
-            <version>1.4</version>
-        </dependency>
-
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.13</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.6</version>
-        </dependency>
-        <dependency>
-            <groupId>net.sourceforge.jarbundler</groupId>
-            <artifactId>jarbundler</artifactId>
-            <version>2.2.0</version>
-        </dependency>
+
     </dependencies>
     <repositories>
         <repository>
@@ -141,9 +182,16 @@
         </repository>
     </repositories>
 
-        <distributionManagement>
-        <repository>
+    <pluginRepositories>
+        <pluginRepository>
             <id>arcane-maven-repo</id>
+            <url>http://arcane.googlecode.com/svn/trunk/repository</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>googlecode</id>
             <name>Arcane</name>
             <url>svn:https://arcane.googlecode.com/svn/trunk/repository</url>
         </repository>
