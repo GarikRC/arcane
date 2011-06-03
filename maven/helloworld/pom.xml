@@ -10,6 +10,13 @@
     <name>HelloWorld</name>
     <url>http://maven.apache.org</url>
 
+    <scm>
+        <connection>scm:svn:http:///arcane.googlecode.com/svn/trunk/repository/helloworld</connection>
+        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/repository/helloworld
+        </developerConnection>
+    </scm>
+
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -121,7 +128,15 @@
     <repositories>
         <repository>
             <id>arcane-maven-repo</id>
-            <url>http://arcane.googlecode.com/hg/repository</url>
+            <url>http://arcane.googlecode.com/svn/trunk/repository</url>
         </repository>
     </repositories>
+
+        <distributionManagement>
+        <repository>
+            <id>arcane-maven-repo</id>
+            <name>Arcane</name>
+            <url>http://arcane.googlecode.com/svn/trunk/repository</url>
+        </repository>
+    </distributionManagement>
 </project>
