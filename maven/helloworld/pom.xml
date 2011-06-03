@@ -3,15 +3,15 @@
 
     <groupId>com.googlecode.arcane</groupId>
     <artifactId>helloworld</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>HelloWorld</name>
     <url>http://maven.apache.org</url>
 
     <scm>
-        <connection>scm:svn:http:///arcane.googlecode.com/svn/tags/helloworld-1.0.0</connection>
-        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/tags/helloworld-1.0.0
+        <connection>scm:svn:http:///arcane.googlecode.com/svn/trunk/maven/helloworld</connection>
+        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/maven/helloworld
         </developerConnection>
     </scm>
 
