@@ -1,18 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.googlecode.arcane</groupId>
     <artifactId>helloworld</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>HelloWorld</name>
     <url>http://maven.apache.org</url>
 
     <scm>
-        <connection>scm:svn:http:///arcane.googlecode.com/svn/trunk/maven/helloworld</connection>
-        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/maven/helloworld
+        <connection>scm:svn:http:///arcane.googlecode.com/svn/tags/helloworld-1.0.0</connection>
+        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/tags/helloworld-1.0.0
         </developerConnection>
     </scm>
 
@@ -73,19 +72,10 @@
                         <phase>package</phase>
                         <configuration>
                             <tasks>
-                                <taskdef name="jarbundler"
-                                         classpathref="maven.compile.classpath"
-                                         classname="net.sourceforge.jarbundler.JarBundler"/>
+                                <taskdef name="jarbundler" classpathref="maven.compile.classpath" classname="net.sourceforge.jarbundler.JarBundler" />
 
                                 <!-- jarbundler is from sourceforge, defined near top of file -->
-                                <jarbundler dir="${project.build.directory}"
-                                            name="${project.name}"
-                                            version="${project.version}"
-                                            mainclass="com.googlecode.arcane.HelloWorld"
-                                            icon="src/main/resources/Forge.icns"
-                                            jvmversion="1.5+"
-                                            shortname="${project.name}"
-                                            jar="${project.build.directory}/${project.artifactId}-${project.version}.jar">
+                                <jarbundler dir="${project.build.directory}" name="${project.name}" version="${project.version}" mainclass="com.googlecode.arcane.HelloWorld" icon="src/main/resources/Forge.icns" jvmversion="1.5+" shortname="${project.name}" jar="${project.build.directory}/${project.artifactId}-${project.version}.jar">
 
 
                                     <javafileset dir="${basedir}/src/main/resources" includes="*.properties" />
