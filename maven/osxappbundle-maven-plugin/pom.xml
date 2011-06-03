@@ -30,10 +30,9 @@
     </prerequisites>
 
     <scm>
-        <connection>scm:hg:http://arcane.googlecode.com/hg/maven/osxappbundle-maven-plugin</connection>
-        <developerConnection>scm:hg:https://arcane.googlecode.com/hg/maven/osxappbundle-maven-plugin
+        <connection>scm:svn:http://arcane.googlecode.com/svn/trunk/maven/osxappbundle-maven-plugin</connection>
+        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/maven/osxappbundle-maven-plugin
         </developerConnection>
-        <url>http://fisheye.codehaus.org/browse/mojo/trunk/mojo/osxappbundle-maven-plugin</url>
     </scm>
 
     <developers>
