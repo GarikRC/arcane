@@ -5,7 +5,7 @@
     <artifactId>forge</artifactId>
     <packaging>jar</packaging>
     <name>Forge</name>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
     <description>Forge</description>
     <url>http://www.slightlymagic.net/</url>
     <properties>
@@ -46,8 +46,8 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:svn:https://arcane.googlecode.com/svn/tags/forge-1.0.1</connection>
-        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/tags/forge-1.0.1</developerConnection>
+        <connection>scm:svn:https://arcane.googlecode.com/svn/trunk/cardforge</connection>
+        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/cardforge</developerConnection>
     </scm>
     <build>
         <sourceDirectory>src</sourceDirectory>
@@ -167,8 +167,7 @@
                                     <fileset dir="${basedir}" includes="CHANGES.txt" />
                                 </copy>
                                 <taskdef name="jarbundler" classpathref="maven.runtime.classpath" classname="net.sourceforge.jarbundler.JarBundler" />
-                                <jarbundler dir="${project.build.directory}/${project.build.finalName}-osx" name="${project.name}" version="${project.version}" mainclass="forge.Gui_NewGame"
-                                            icon="${basedir}/build/Forge.icns"
+                                <jarbundler dir="${project.build.directory}/${project.build.finalName}-osx" name="${project.name}" version="${project.version}" mainclass="forge.Gui_NewGame" icon="${basedir}/build/Forge.icns"
                                             jvmversion="1.5+"
                                             vmoptions="-Xmx1024m"
                                             shortname="${project.name}"
