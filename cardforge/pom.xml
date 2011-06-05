@@ -47,7 +47,7 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:svn:http://arcane.googlecode.com/svn/trunk/cardforge</connection>
+        <connection>scm:svn:https://arcane.googlecode.com/svn/trunk/cardforge</connection>
         <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/cardforge</developerConnection>
     </scm>
     <build>
