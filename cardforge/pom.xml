@@ -1,12 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>forge</groupId>
     <artifactId>forge</artifactId>
     <packaging>jar</packaging>
     <name>Forge</name>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <description>Forge</description>
     <url>http://www.slightlymagic.net/</url>
     <properties>
@@ -47,8 +46,8 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:svn:https://arcane.googlecode.com/svn/trunk/cardforge</connection>
-        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/cardforge</developerConnection>
+        <connection>scm:svn:https://arcane.googlecode.com/svn/tags/forge-1.0.0</connection>
+        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/tags/forge-1.0.0</developerConnection>
     </scm>
     <build>
         <sourceDirectory>src</sourceDirectory>
@@ -161,17 +160,15 @@
                         <configuration>
                             <tasks>
                                  OSX archive
-                                <mkdir dir="${project.build.directory}/${project.build.finalName}-osx"/>
+                                <mkdir dir="${project.build.directory}/${project.build.finalName}-osx" />
                                 <copy todir="${project.build.directory}/${project.build.finalName}-osx">
-                                    <fileset dir="${basedir}" includes="LICENSE.txt"/>
-                                    <fileset dir="${basedir}" includes="README.txt"/>
-                                    <fileset dir="${basedir}" includes="CHANGES.txt"/>
+                                    <fileset dir="${basedir}" includes="LICENSE.txt" />
+                                    <fileset dir="${basedir}" includes="README.txt" />
+                                    <fileset dir="${basedir}" includes="CHANGES.txt" />
                                 </copy>
-                                <taskdef name="jarbundler"
-                                         classpathref="maven.runtime.classpath"
-                                         classname="net.sourceforge.jarbundler.JarBundler"/>
-                                <jarbundler dir="${project.build.directory}/${project.build.finalName}-osx"
-                                            name="${project.name}"
+                                <taskdef name="jarbundler" classpathref="maven.runtime.classpath"
+                                         classname="net.sourceforge.jarbundler.JarBundler" />
+                                <jarbundler dir="${project.build.directory}/${project.build.finalName}-osx" name="${project.name}"
                                             version="${project.version}"
                                             mainclass="forge.Gui_NewGame"
                                             icon="${basedir}/build/Forge.icns"
@@ -180,18 +177,16 @@
                                             shortname="${project.name}"
                                             workingdirectory="$APP_PACKAGE/Contents/Resources/Java"
                                             jar="${project.build.directory}/${project.build.finalName}-jar-with-dependencies.jar">
-                                    <javafileset dir="${basedir}" includes="*.properties"/>
-                                    <javafileset dir="${basedir}" includes="res/**"/>
-                                    <javaproperty name="apple.laf.useScreenMenuBar" value="true"/>
+                                    <javafileset dir="${basedir}" includes="*.properties" />
+                                    <javafileset dir="${basedir}" includes="res/**" />
+                                    <javaproperty name="apple.laf.useScreenMenuBar" value="true" />
                                 </jarbundler>
-                                <exec dir="${project.build.directory}"
-                                      executable="hdiutil"
+                                <exec dir="${project.build.directory}" executable="hdiutil"
                                       failonerror="false">
-                                    <arg line="create -srcfolder ${project.build.directory}/${project.build.finalName}-osx ${project.build.directory}/${project.build.finalName}.dmg"/>
+                                    <arg line="create -srcfolder ${project.build.directory}/${project.build.finalName}-osx ${project.build.directory}/${project.build.finalName}.dmg" />
                                 </exec>
-                                <tar basedir="${project.build.directory}" includes="${project.build.finalName}.dmg"
-                                     destfile="${project.build.directory}/${project.build.finalName}.osx.tar.bz2"
-                                     compression="bzip2"/>
+                                <tar basedir="${project.build.directory}" includes="${project.build.finalName}.dmg" destfile="${project.build.directory}/${project.build.finalName}.osx.tar.bz2"
+                                     compression="bzip2" />
                             </tasks>
                         </configuration>
                         <goals>
@@ -204,33 +199,28 @@
                         <configuration>
                             <tasks>
                                 <!-- Windows/Linux archive -->
-                                <mkdir dir="${project.build.directory}/${project.build.finalName}"/>
+                                <mkdir dir="${project.build.directory}/${project.build.finalName}" />
                                 <copy todir="${project.build.directory}/${project.build.finalName}">
-                                    <fileset dir="${project.build.directory}" includes="forge.sh"/>
-                                    <fileset dir="${basedir}" includes="forge.properties"/>
-                                    <fileset dir="${basedir}" includes="LICENSE.txt"/>
-                                    <fileset dir="${basedir}" includes="README.txt"/>
-                                    <fileset dir="${basedir}" includes="CHANGES.txt"/>
-                                    <fileset dir="${basedir}" includes="res/**"/>
-                                    <fileset dir="${project.build.directory}" includes="forge.exe"/>
-                                    <fileset dir="${project.build.directory}"
-                                             includes="${project.build.finalName}-jar-with-dependencies.jar"/>
+                                    <fileset dir="${project.build.directory}" includes="forge.sh" />
+                                    <fileset dir="${basedir}" includes="forge.properties" />
+                                    <fileset dir="${basedir}" includes="LICENSE.txt" />
+                                    <fileset dir="${basedir}" includes="README.txt" />
+                                    <fileset dir="${basedir}" includes="CHANGES.txt" />
+                                    <fileset dir="${basedir}" includes="res/**" />
+                                    <fileset dir="${project.build.directory}" includes="forge.exe" />
+                                    <fileset dir="${project.build.directory}" includes="${project.build.finalName}-jar-with-dependencies.jar" />
                                 </copy>
-                                <chmod file="${project.build.directory}/${project.build.finalName}/forge.sh"
-                                       perm="a+rx"/>
-                                <chmod file="${project.build.directory}/${project.build.finalName}/forge.exe"
-                                       perm="a+rx"/>
-                                <tar destfile="${project.build.directory}/${project.build.finalName}.tar.bz2"
-                                     compression="bzip2">
-                                    <tarfileset filemode="755"
-                                                dir="${project.build.directory}/${project.build.finalName}">
-                                        <include name="forge.sh"/>
-                                        <include name="forge.exe"/>
+                                <chmod file="${project.build.directory}/${project.build.finalName}/forge.sh" perm="a+rx" />
+                                <chmod file="${project.build.directory}/${project.build.finalName}/forge.exe" perm="a+rx" />
+                                <tar destfile="${project.build.directory}/${project.build.finalName}.tar.bz2" compression="bzip2">
+                                    <tarfileset filemode="755" dir="${project.build.directory}/${project.build.finalName}">
+                                        <include name="forge.sh" />
+                                        <include name="forge.exe" />
                                     </tarfileset>
                                     <tarfileset dir="${project.build.directory}/${project.build.finalName}">
-                                        <include name="**"/>
-                                        <exclude name="forge.sh"/>
-                                        <exclude name="forge.exe"/>
+                                        <include name="**" />
+                                        <exclude name="forge.sh" />
+                                        <exclude name="forge.exe" />
                                     </tarfileset>
                                 </tar>
                             </tasks>
@@ -521,38 +511,22 @@
                                 <configuration>
                                     <tasks>
                                         <!-- OSX archive -->
-                                        <mkdir dir="${project.build.directory}/${project.build.finalName}-osx"/>
+                                        <mkdir dir="${project.build.directory}/${project.build.finalName}-osx" />
                                         <copy todir="${project.build.directory}/${project.build.finalName}-osx">
-                                            <fileset dir="${basedir}" includes="LICENSE.txt"/>
-                                            <fileset dir="${basedir}" includes="README.txt"/>
-                                            <fileset dir="${basedir}" includes="CHANGES.txt"/>
+                                            <fileset dir="${basedir}" includes="LICENSE.txt" />
+                                            <fileset dir="${basedir}" includes="README.txt" />
+                                            <fileset dir="${basedir}" includes="CHANGES.txt" />
                                         </copy>
-                                        <taskdef name="jarbundler"
-                                                 classpathref="maven.runtime.classpath"
-                                                 classname="net.sourceforge.jarbundler.JarBundler"/>
-                                        <jarbundler dir="${project.build.directory}/${project.build.finalName}-osx"
-                                                    name="${project.name}"
-                                                    version="${project.version}"
-                                                    mainclass="forge.Gui_NewGame"
-                                                    icon="${basedir}/build/Forge.icns"
-                                                    jvmversion="1.5+"
-                                                    vmoptions="-Xmx1024m"
-                                                    shortname="${project.name}"
-                                                    workingdirectory="$APP_PACKAGE/Contents/Resources/Java"
-                                                    jar="${project.build.directory}/${project.build.finalName}-jar-with-dependencies.jar">
-                                            <javafileset dir="${basedir}" includes="*.properties"/>
-                                            <javafileset dir="${basedir}" includes="res/**"/>
-                                            <javaproperty name="apple.laf.useScreenMenuBar" value="true"/>
+                                        <taskdef name="jarbundler" classpathref="maven.runtime.classpath" classname="net.sourceforge.jarbundler.JarBundler" />
+                                        <jarbundler dir="${project.build.directory}/${project.build.finalName}-osx" name="${project.name}" version="${project.version}" mainclass="forge.Gui_NewGame" icon="${basedir}/build/Forge.icns" jvmversion="1.5+" vmoptions="-Xmx1024m" shortname="${project.name}" workingdirectory="$APP_PACKAGE/Contents/Resources/Java" jar="${project.build.directory}/${project.build.finalName}-jar-with-dependencies.jar">
+                                            <javafileset dir="${basedir}" includes="*.properties" />
+                                            <javafileset dir="${basedir}" includes="res/**" />
+                                            <javaproperty name="apple.laf.useScreenMenuBar" value="true" />
                                         </jarbundler>
-                                        <exec dir="${project.build.directory}"
-                                              executable="hdiutil"
-                                              failonerror="false">
-                                            <arg line="create -srcfolder ${project.build.directory}/${project.build.finalName}-osx ${project.build.directory}/${project.build.finalName}.dmg"/>
+                                        <exec dir="${project.build.directory}" executable="hdiutil" failonerror="false">
+                                            <arg line="create -srcfolder ${project.build.directory}/${project.build.finalName}-osx ${project.build.directory}/${project.build.finalName}.dmg" />
                                         </exec>
-                                        <tar basedir="${project.build.directory}"
-                                             includes="${project.build.finalName}.dmg"
-                                             destfile="${project.build.directory}/${project.build.finalName}.osx.tar.bz2"
-                                             compression="bzip2"/>
+                                        <tar basedir="${project.build.directory}" includes="${project.build.finalName}.dmg" destfile="${project.build.directory}/${project.build.finalName}.osx.tar.bz2" compression="bzip2" />
                                     </tasks>
                                 </configuration>
                                 <goals>
