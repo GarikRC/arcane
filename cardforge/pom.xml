@@ -320,9 +320,19 @@
                             <uploads>
                                 <upload>
                                     <file>
-                                        ${project.build.directory}/${project.artifactId}-${project.version}.${project.packaging}
+                                        ${project.build.directory}/${project.build.finalName}.tar.bz2
                                     </file>
-                                    <summary>${project.name} sources bundle ${project.version}</summary>
+                                    <summary>${project.name} ${project.version} Windows/Linux package</summary>
+                                    <labels>
+                                        <label>Featured</label>
+                                        <label>Type-Archive</label>
+                                    </labels>
+                                </upload>
+                                <upload>
+                                    <file>
+                                        ${project.build.directory}/${project.build.finalName}.osx.tar.bz2
+                                    </file>
+                                    <summary>${project.name} ${project.version} Mac OSX package</summary>
                                     <labels>
                                         <label>Featured</label>
                                         <label>Type-Archive</label>
