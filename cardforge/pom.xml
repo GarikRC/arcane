@@ -47,8 +47,8 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:svn:http://cardforge.googlecode.com/svn/src</connection>
-        <developerConnection>scm:svn:https://cardforge.googlecode.com/svn/src/</developerConnection>
+        <connection>scm:svn:http://arcane.googlecode.com/svn/trunk/cardforge</connection>
+        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/cardforge</developerConnection>
     </scm>
     <build>
         <sourceDirectory>src</sourceDirectory>
@@ -329,7 +329,7 @@
                         <configuration>
                             <failsOnError>true</failsOnError>
                             <!-- default: false -->
-                            <projectName>cardforge</projectName>
+                            <projectName>arcane</projectName>
                             <!-- default: ${project.artifactId} -->
                             <uploads>
                                 <upload>
@@ -466,8 +466,8 @@
     <distributionManagement>
         <repository>
             <id>googlecode</id>
-            <name>Cardforge</name>
-            <url>svn:https://cardforge.googlecode.com/svn/trunk/repository</url>
+            <name>Arcane</name>
+            <url>svn:https://arcane.googlecode.com/svn/trunk/repository</url>
         </repository>
     </distributionManagement>
 
