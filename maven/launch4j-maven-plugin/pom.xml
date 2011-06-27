@@ -114,6 +114,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
     <plugins>
         <plugin>
             <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.6</version>
             <executions>
                 <execution>
                     <id>copy</id>
@@ -130,6 +131,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
         </plugin>
         <plugin>
             <artifactId>maven-assembly-plugin</artifactId>
+            <version>2.2.1</version>
             <executions>
                 <execution>
                     <id>assemble-workdir</id>
@@ -183,6 +185,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-project-info-reports-plugin</artifactId>
+            <version>2.3.1</version>
             <reportSets>
                 <reportSet>
                     <reports>
@@ -197,10 +200,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.8</version>
         </plugin>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-report-plugin</artifactId>
+            <version>2.7.2</version>
         </plugin>
     </plugins>
 </reporting>
