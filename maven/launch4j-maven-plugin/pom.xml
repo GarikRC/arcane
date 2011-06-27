@@ -29,14 +29,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
   <description><![CDATA[This plugin creates Windows executables from Java jar files using <a href="http://launch4j.sourceforge.net">the Launch4j utility</a>.]]></description>
   -->
     <url>http://9stmaryrd.com/tools/launch4j-maven-plugin/</url>
-    <properties>
-        <project.build.sourceEncoding>
-            ISO-8859-1
-        </project.build.sourceEncoding>
-        <project.reporting.outputEncoding>
-            ISO-8859-1
-        </project.reporting.outputEncoding>
-    </properties>
 
     <scm>
         <connection>scm:svn:https:///arcane.googlecode.com/svn/trunk/maven/launch4j-maven-plugin</connection>
