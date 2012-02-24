@@ -513,17 +513,18 @@
     <distributionManagement>
         <site>
             <id>morphia-googlecode</id>
-            <url>svn:https://morphia.googlecode.com/svn/site</url>
+            <url>svn:https://arcane.googlecode.com/svn/site/morphia</url>
+
         </site>
         <repository>
             <uniqueVersion>false</uniqueVersion>
             <id>morphia-googlecode</id>
-            <url>svn:https://morphia.googlecode.com/svn/mavenrepo</url>
+            <url>svn:https://arcane.googlecode.com/svn/trunk/repository</url>
         </repository>
         <snapshotRepository>
             <uniqueVersion>true</uniqueVersion>
             <id>morphia-googlecode</id>
-            <url>svn:https://morphia.googlecode.com/svn/mavenrepo</url>
+            <url>svn:https://arcane.googlecode.com/svn/trunk/repository</url>
         </snapshotRepository>
     </distributionManagement>
 
