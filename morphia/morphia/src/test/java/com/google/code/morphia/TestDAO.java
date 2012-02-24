@@ -16,15 +16,6 @@
 
 package com.google.code.morphia;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.Date;
-import java.util.List;
-
-import org.junit.Test;
-
 import com.google.code.morphia.dao.BasicDAO;
 import com.google.code.morphia.dao.DAO;
 import com.google.code.morphia.query.UpdateOperations;
@@ -32,9 +23,16 @@ import com.google.code.morphia.testdaos.HotelDAO;
 import com.google.code.morphia.testmodel.Address;
 import com.google.code.morphia.testmodel.Hotel;
 import com.google.code.morphia.testmodel.PhoneNumber;
+import org.junit.Test;
+
+import java.util.Date;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
- *
  * @author Olafur Gauti Gudmundsson
  */
 public class TestDAO extends TestBase {
@@ -43,7 +41,7 @@ public class TestDAO extends TestBase {
     public void testNewDAO() throws Exception {
         morphia.map(Hotel.class);
 
-        DAO<Hotel, String> hotelDAO = new BasicDAO<Hotel,String>(Hotel.class, mongo, morphia, "morphia_test");
+        DAO<Hotel, String> hotelDAO = new BasicDAO<Hotel, String>(Hotel.class, mongo, morphia, "morphia_test");
 
         Hotel borg = Hotel.create();
         borg.setName("Hotel Borg");
@@ -139,7 +137,6 @@ public class TestDAO extends TestBase {
         assertEquals(borg.getStartDate(), hotelByValue.getStartDate());
 
         assertTrue(hotelDAO.exists("stars", 4));
-
         Hotel hilton = Hotel.create();
         hilton.setName("Hilton Hotel");
         hilton.setStars(4);
@@ -152,7 +149,6 @@ public class TestDAO extends TestBase {
         hilton.setAddress(hiltonAddr);
 
         hotelDAO.save(hilton);
-
         List<Hotel> allHotels = hotelDAO.find().asList();
         assertEquals(2, allHotels.size());
 
@@ -172,19 +168,20 @@ public class TestDAO extends TestBase {
         hotelDAO.getCollection().drop();
         assertEquals(0, hotelDAO.count());
     }
+
     @Test
     public void testSaveEntityWithId() throws Exception {
-         HotelDAO hotelDAO = new HotelDAO(morphia, mongo);
-        
-         Hotel borg = Hotel.create();
-         borg.setName("Hotel Borg");
-         borg.setStars(4);
-         hotelDAO.save(borg);
-        
-         Hotel hotelLoaded = hotelDAO.get(borg.getId());           
-         hotelLoaded.setStars(5);
-         hotelDAO.save(hotelLoaded);
-         Hotel hotelReloaded = hotelDAO.get(borg.getId());
-         assertEquals(5,hotelReloaded.getStars());
+        HotelDAO hotelDAO = new HotelDAO(morphia, mongo);
+
+        Hotel borg = Hotel.create();
+        borg.setName("Hotel Borg");
+        borg.setStars(4);
+        hotelDAO.save(borg);
+
+        Hotel hotelLoaded = hotelDAO.get(borg.getId());
+        hotelLoaded.setStars(5);
+        hotelDAO.save(hotelLoaded);
+        Hotel hotelReloaded = hotelDAO.get(borg.getId());
+        assertEquals(5, hotelReloaded.getStars());
     }
 }

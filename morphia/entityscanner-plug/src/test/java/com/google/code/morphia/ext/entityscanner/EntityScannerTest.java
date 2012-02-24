@@ -3,20 +3,21 @@
  */
 package com.google.code.morphia.ext.entityscanner;
 
-import junit.framework.TestCase;
-
-import org.junit.Test;
-
 import com.google.code.morphia.Morphia;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
+import junit.framework.TestCase;
+import org.junit.Ignore;
+import org.junit.Test;
 
 /**
  * @author us@thomas-daily.de
  * 
  */
+@Ignore
 public class EntityScannerTest extends TestCase {
-	@Test
+	@Ignore
+    @Test
 	public void testScanning() throws Exception {
 		final Morphia m = new Morphia();
 		assertFalse(m.isMapped(E.class));
