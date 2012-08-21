@@ -1,0 +1,268 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.newdawn.slick</groupId>
+    <artifactId>slick-project</artifactId>
+    <version>234</version>
+
+    <packaging>pom</packaging>
+
+    <description>
+        Slick2D is a simple set of tools wrapped around the LWJGL OpenGL binding for Java.
+    </description>
+    <url>http://slick.cokeandcode.com</url>
+    <organization>
+        <name>Slick2D</name>
+        <url>http://slick.cokeandcode.com</url>
+    </organization>
+    <inceptionYear>2006</inceptionYear>
+    <issueManagement>
+        <system>Bug Forum</system>
+        <url>http://slick.javaunlimited.net/viewforum.php?f=1</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <id>KevinGlass</id>
+            <name>Kevin Glass</name>
+            <email>slick@cokeandcode.com</email>
+        </developer>
+        <developer>
+            <id>TommyHaaks</id>
+            <name>Tommy Haaks</name>
+            <email>tommy@haaks.net</email>
+        </developer>
+        <developer>
+            <id>MarkBernard</id>
+            <name>Mark Bernard</name>
+            <email>captainjester@hotmail.com</email>
+        </developer>
+        <developer>
+            <id>AaronRoberts</id>
+            <name>Aaron Roberts</name>
+            <email>antamiga@gmail.com</email>
+        </developer>
+        <developer>
+            <id>liamzebedee</id>
+            <name>Liam Edwards-Playne</name>
+            <email>liamzebedee@yahoo.com.au</email>
+        </developer>
+    </developers>
+
+    <prerequisites>
+        <maven>3.0.4</maven>
+    </prerequisites>
+
+    <mailingLists>
+        <mailingList>
+            <name>Slick Forum</name>
+            <archive>http://slick.javaunlimited.net</archive>
+        </mailingList>
+    </mailingLists>
+
+    <licenses>
+        <license>
+            <name>BSD</name>
+            <url>http://slick.cokeandcode.com/static.php?page=license</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>
+            scm:hg:${basedir}/..
+        </connection>
+        <developerConnection>
+            scm:hg:${basedir}/..
+        </developerConnection>
+        <url>http://slick.cokeandcode.com/index.php</url>
+        <tag>slick-project-234</tag>
+    </scm>
+
+    <properties>
+        <java.source.version>1.5</java.source.version>
+        <java.source.target.version>1.5</java.source.target.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <skipTests>true</skipTests>
+
+        <maven.jar.index>true</maven.jar.index>
+
+        <build.dir>${basedir}/target</build.dir>
+        <packages.output.dir>dist-packaged</packages.output.dir>
+        <output.dir>${basedir}/dist</output.dir>
+        <webstart.dir>${basedir}/dist/webstart</webstart.dir>
+        <ant.dir>${basedir}/maven_files</ant.dir>
+
+        <keystore.name>DefaultKeySigningName</keystore.name>
+
+        <keystore.dir>${basedir}/maven_files/keystore</keystore.dir>
+        <keystore.alias>DefaultKeySigningAlias</keystore.alias>
+        <keystore.company>DefaultKeySigningCompany</keystore.company>
+
+        <jnlp.template>src/main/jnlp/slickdemo.vm</jnlp.template>
+
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>1.7</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.12.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.5.1</version>
+                    <configuration>
+                        <source>${java.source.version}</source>
+                        <target>${java.source.target.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.7</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.google.code.maven-svn-wagon</groupId>
+                            <artifactId>maven-svn-wagon</artifactId>
+                            <version>1.4</version>
+                        </dependency>
+                        <!--
+                     <dependency>
+                         <groupId>org.apache.maven.scm</groupId>
+                         <artifactId>maven-scm-api</artifactId>
+                         <version>1.7</version>
+                     </dependency>
+                     <dependency>
+                         <groupId>org.apache.maven.scm</groupId>
+                         <artifactId>maven-scm-provider-hg</artifactId>
+                         <version>1.7</version>
+                     </dependency>   -->
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <port>8081</port>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.google.code.maven-svn-wagon</groupId>
+                            <artifactId>maven-svn-wagon</artifactId>
+                            <version>1.4</version>
+                        </dependency>
+                    </dependencies>
+                    <!--  <dependencies>
+                     <dependency>
+                         <groupId>org.apache.maven.scm</groupId>
+                         <artifactId>maven-scm-api</artifactId>
+                         <version>1.7</version>
+                     </dependency>
+                     <dependency>
+                         <groupId>org.apache.maven.scm</groupId>
+                         <artifactId>maven-scm-provider-hg</artifactId>
+                         <version>1.7</version>
+                     </dependency>
+                 </dependencies>   -->
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <configuration>
+                        <!--<localCheckout>true</localCheckout> -->
+                        <pushChanges>false</pushChanges>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <!--
+        The artifacts obtained from this repo are noted in the dependency section. They need to be moved to Maven Central
+        before the Slick pom conforms to Maven Central requirements for pom inclusion. (Outside repos are =very= frowned upon)
+
+        Right now this repo is available on google code, but it can easily be moved to a slick webserver
+    -->
+
+    <repositories>
+        <repository>
+            <id>slick2d-maven-repo</id>
+            <url>http://slick2d-maven-dependencies.googlecode.com/hg/repository</url>
+        </repository>
+    </repositories>
+
+ <!--   <scm>
+        <connection>scm:hg:https://bitbucket.org/j_mabrey/slick-maven/trunk/Slick</connection>
+        <developerConnection>scm:hg:https://bitbucket.org/j_mabrey/slick-maven/trunk/Slick</developerConnection>
+        <url>http://slick.cokeandcode.com/index.php</url>
+        <tag>HEAD</tag>
+    </scm> -->
+
+    <distributionManagement>
+        <!-- <repository>
+         <id>googlecode</id>
+         <name>Slick2d Maven Dependencies</name>
+         <url>hg:https://slick2d-maven-dependencies.googlecode.com/hg/repository</url>
+     </repository>
+     <site>
+         <id>googlecode-site</id>
+         <name>Slick2d Maven Dependencies Site</name>
+         <url>hg:https://slick2d-maven-dependencies.googlecode.com/hg/site</url>
+     </site>   -->
+        <repository>
+
+            <id>googlecode</id>
+            <name>Arcane</name>
+            <url>svn:https://arcane.googlecode.com/svn/trunk/repository</url>
+        </repository>
+        <site>
+            <id>googlecode-site</id>
+            <name>Arcane</name>
+            <url>svn:https://arcane.googlecode.com/svn/site/${project.artifactId}</url>
+        </site>
+    </distributionManagement>
+
+    <modules>
+        <module>slick</module>
+        <module>slick-examples</module>
+        <module>slick-hiero</module>
+        <module>slick-packulike</module>
+        <module>slick-peditor</module>
+        <module>slick-scalar</module>
+        <module>slick-util</module>
+    </modules>
+
+</project>
