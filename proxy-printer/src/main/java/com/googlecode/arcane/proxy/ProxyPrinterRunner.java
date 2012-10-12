@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.googlecode.arcane.proxy.proxy;
+package com.googlecode.arcane.proxy;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

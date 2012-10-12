@@ -1,4 +1,4 @@
-package com.googlecode.arcane.proxy.proxy;
+package com.googlecode.arcane.proxy;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
