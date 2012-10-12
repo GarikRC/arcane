@@ -15,8 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.slightlymagic.proxy;
+package com.googlecode.arcane.proxy;
 
+import net.slightlymagic.proxy.ProxyPrinter;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.logging.Logger;

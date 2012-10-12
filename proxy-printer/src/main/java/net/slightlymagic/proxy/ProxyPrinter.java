@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.slightlymagic.proxy;
+package com.googlecode.arcane.proxy;
 
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
@@ -193,7 +193,7 @@ public class ProxyPrinter {
     public final void printProxies(final String[] files) {
         for (String fileName : files) {
             File file = new File(fileName);
-            Deck deck = new Deck(file);
+            com.googlecode.arcane.proxy.Deck deck = new com.googlecode.arcane.proxy.Deck(file);
             deck.parse();
             File htmlFile = new File(fileName.replace(".dec", ".html"));
             generateHtml(deck, htmlFile);

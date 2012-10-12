@@ -1,4 +1,4 @@
-package net.slightlymagic.proxy;
+package com.googlecode.arcane.proxy;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -23,7 +23,7 @@ public class Deck {
      *
      */
     private static Logger log =
-            Logger.getLogger(ProxyPrinterRunner.class.getCanonicalName());
+            Logger.getLogger(Deck.class.getCanonicalName());
 
     /**
      * @return String deckName

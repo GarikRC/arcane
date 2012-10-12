@@ -2,23 +2,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.slightlymagic.proxy</groupId>
+    <groupId>com.googlecode.arcane.proxy</groupId>
     <artifactId>proxy-printer</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>proxy-printer</name>
-    <url>http://slightlymagic.net</url>
+    <url>https://code.google.com/p/arcane/</url>
     <description>Proxy Printer will get proxies from magiccards.info and assembly them into a web page.</description>
     <organization>
         <name>Proxy Printer</name>
-        <url>http://slightlymagic.net</url>
+        <url>https://code.google.com/p/arcane/</url>
     </organization>
     <inceptionYear>2012</inceptionYear>
     <issueManagement>
-        <system>Forums</system>
-        <url>http://slightlymagic.net</url>
+        <system>Issue List</system>
+        <url>https://code.google.com/p/arcane/issues/list</url>
     </issueManagement>
+
+    <scm>
+        <connection>scm:svn:http://arcane.googlecode.com/svn/trunk/proxy-printer</connection>
+        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/proxy-printer</developerConnection>
+        <url>https://code.google.com/p/arcane/source/browse/#svn%2Ftrunk%2Fproxy-printer</url>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,8 +54,8 @@
 
     <mailingLists>
         <mailingList>
-            <name>Forge Forum</name>
-            <archive>http://www.slightlymagic.net/forum/viewforum.php?f=26</archive>
+            <name>Arcane Issues List</name>
+            <archive>https://code.google.com/p/arcane/issues/list</archive>
         </mailingList>
     </mailingLists>
 
@@ -83,7 +89,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>net.slightlymagic.proxy.ProxyPrinterRunner</mainClass>
+                            <mainClass>com.googlecode.arcane.proxy.ProxyPrinterRunner</mainClass>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
                     </archive>
