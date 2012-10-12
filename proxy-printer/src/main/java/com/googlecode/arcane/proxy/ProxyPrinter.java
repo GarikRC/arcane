@@ -193,7 +193,8 @@ public class ProxyPrinter {
     public final void printProxies(final String[] files) {
         for (String fileName : files) {
             File file = new File(fileName);
-            com.googlecode.arcane.proxy.Deck deck = new com.googlecode.arcane.proxy.Deck(file);
+            com.googlecode.arcane.proxy.Deck deck =
+                    new com.googlecode.arcane.proxy.Deck(file);
             deck.parse();
             File htmlFile = new File(fileName.replace(".dec", ".html"));
             generateHtml(deck, htmlFile);

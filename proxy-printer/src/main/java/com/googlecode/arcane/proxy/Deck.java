@@ -102,7 +102,8 @@ public class Deck {
                         //System.out.println(strLine);
                         if (!strLine.trim().isEmpty()) {
                             String[] split = strLine.split(" ", 2);
-                            this.cardList.put(split[1], Integer.parseInt(split[0]));
+                            this.cardList.put(split[1],
+                                    Integer.parseInt(split[0]));
                         }
                     }
                 }
