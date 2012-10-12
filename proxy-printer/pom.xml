@@ -89,7 +89,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.googlecode.arcane.proxy.ProxyPrinterRunner</mainClass>
+                            <mainClass>com.googlecode.arcane.proxy.proxy.ProxyPrinterRunner</mainClass>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
                     </archive>
