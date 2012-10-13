@@ -21,7 +21,7 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:svn:http://arcane.googlecode.com/svn/trunk/proxy-printer</connection>
+        <connection>scm:svn:https://arcane.googlecode.com/svn/trunk/proxy-printer</connection>
         <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/proxy-printer</developerConnection>
         <url>https://code.google.com/p/arcane/source/browse/#svn%2Ftrunk%2Fproxy-printer</url>
     </scm>
