@@ -43,7 +43,7 @@
 
     <distributionManagement>
         <site>
-            <id>local</id>
+            <id>googlecode</id>
             <url>svn:https://arcane.googlecode.com/svn/site/${project.artifactId}</url>
         </site>
     </distributionManagement>
