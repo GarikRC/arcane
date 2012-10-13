@@ -118,6 +118,64 @@
                     <level>package</level>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.google.code.maven-svn-wagon</groupId>
+                        <artifactId>maven-svn-wagon</artifactId>
+                        <version>1.4</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>com.googlecode.maven-gcu-plugin</groupId>
+                <artifactId>maven-gcu-plugin</artifactId>
+                <version>1.1</version>
+                <executions>
+                    <execution>
+                        <id>googlecode-upload</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>upload</goal>
+                        </goals>
+                        <configuration>
+                            <failsOnError>true</failsOnError>
+                            <!-- default: false -->
+                            <projectName>arcane</projectName>
+                            <!-- default: ${project.artifactId} -->
+                            <uploads>
+                                <upload>
+                                    <file>
+                                        ${project.build.directory}/${project.build.finalName}.tar.bz2
+                                    </file>
+                                    <summary>${project.name} ${project.version} Windows/Linux package</summary>
+                                    <labels>
+                                        <label>Featured</label>
+                                        <label>Type-Archive</label>
+                                    </labels>
+                                </upload>
+                                <upload>
+                                    <file>
+                                        ${project.build.directory}/${project.build.finalName}.osx.tar.bz2
+                                    </file>
+                                    <summary>${project.name} ${project.version} Mac OSX package</summary>
+                                    <labels>
+                                        <label>Featured</label>
+                                        <label>Type-Archive</label>
+                                    </labels>
+                                </upload>
+                            </uploads>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
 
         <pluginManagement>
