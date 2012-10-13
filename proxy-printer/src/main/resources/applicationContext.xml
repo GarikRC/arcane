@@ -7,7 +7,7 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="proxyPrinter" class="net.slightlymagic.proxy.ProxyPrinter">
+    <bean id="proxyPrinter" class="com.googlecode.arcane.proxy.ProxyPrinter">
         <constructor-arg name="cardBorderParam" value="0"/>
         <constructor-arg name="heightParam" value="319"/>
         <constructor-arg name="widthParam" value="222"/>
