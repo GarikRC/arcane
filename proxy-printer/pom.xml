@@ -41,13 +41,6 @@
         </developer>
     </developers>
 
-    <distributionManagement>
-        <site>
-            <id>googlecode</id>
-            <url>svn:https://arcane.googlecode.com/svn/site/${project.artifactId}</url>
-        </site>
-    </distributionManagement>
-
     <licenses>
         <license>
             <name>GPL 3</name>
@@ -431,4 +424,36 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <distributionManagement>
+        <repository>
+            <id>googlecode</id>
+            <name>Arcane</name>
+            <url>svn:https://arcane.googlecode.com/svn/trunk/repository</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>arcane-maven-repo</id>
+            <name>Arcane Maven Repository</name>
+            <layout>default</layout>
+            <url>http://arcane.googlecode.com/svn/trunk/repository</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>arcane-maven-repo</id>
+            <name>Arcane Maven Repository</name>
+            <layout>default</layout>
+            <url>http://arcane.googlecode.com/svn/trunk/repository</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
