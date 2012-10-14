@@ -3,7 +3,7 @@
 
     <groupId>com.googlecode.arcane.proxy</groupId>
     <artifactId>proxy-printer</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>proxy-printer</name>
@@ -20,9 +20,9 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:svn:http://arcane.googlecode.com/svn/tags/proxy-printer-1.0.2</connection>
-        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/tags/proxy-printer-1.0.2</developerConnection>
-        <url>http://arcane.googlecode.com/svn/tags/proxy-printer-1.0.2</url>
+        <connection>scm:svn:http://arcane.googlecode.com/svn/trunk/proxy-printer</connection>
+        <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/proxy-printer</developerConnection>
+        <url>http://arcane.googlecode.com/svn/trunk/proxy-printer/</url>
     </scm>
 
     <properties>
