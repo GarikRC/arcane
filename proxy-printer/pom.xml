@@ -144,37 +144,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
-            <plugin>
-                <groupId>com.googlecode.maven-gcu-plugin</groupId>
-                <artifactId>maven-gcu-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>googlecode-upload</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>upload</goal>
-                        </goals>
-                        <configuration>
-                            <failsOnError>true</failsOnError>
-                            <!-- default: false -->
-                            <projectName>${project.artifactId}</projectName>
-                            <uploads>
-                                <upload>
-                                    <file>
-                                        ${project.build.directory}/${project.build.finalName}.zip
-                                    </file>
-                                    <summary>${project.name} ${project.version} package</summary>
-                                    <labels>
-                                        <label>Featured</label>
-                                        <label>Type-Archive</label>
-                                    </labels>
-                                </upload>
-                            </uploads>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
 
         <pluginManagement>
@@ -262,12 +231,6 @@
                 <plugin>
                     <artifactId>maven-scm-plugin</artifactId>
                     <version>1.8</version>
-                </plugin>
-
-                <plugin>
-                    <groupId>com.googlecode.maven-gcu-plugin</groupId>
-                    <artifactId>maven-gcu-plugin</artifactId>
-                    <version>1.1</version>
                 </plugin>
             </plugins>
         </pluginManagement>
