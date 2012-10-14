@@ -4,7 +4,7 @@
   <groupId>com.googlecode.arcane.proxy</groupId>
   <artifactId>proxy-printer</artifactId>
   <name>proxy-printer</name>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.2-SNAPSHOT</version>
   <description>Proxy Printer will get proxies from magiccards.info and assembly them into a web page.</description>
   <url>https://code.google.com/p/arcane/</url>
   <prerequisites>
@@ -118,13 +118,35 @@
           <version>1.8</version>
         </plugin>
         <plugin>
-          <groupId>com.googlecode.maven-gcu-plugin</groupId>
-          <artifactId>maven-gcu-plugin</artifactId>
-          <version>1.1</version>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>2.2.1</version>
         </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <quiet>true</quiet>
+          <failOnError>false</failOnError>
+          <detectOfflineLinks>false</detectOfflineLinks>
+          <show>package</show>
+          <level>package</level>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>com.google.code.maven-svn-wagon</groupId>
+            <artifactId>maven-svn-wagon</artifactId>
+            <version>1.4</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
         <executions>
@@ -161,56 +183,6 @@
           </descriptors>
           <appendAssemblyId>false</appendAssemblyId>
         </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <configuration>
-          <quiet>true</quiet>
-          <failOnError>false</failOnError>
-          <detectOfflineLinks>false</detectOfflineLinks>
-          <show>package</show>
-          <level>package</level>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <dependencies>
-          <dependency>
-            <groupId>com.google.code.maven-svn-wagon</groupId>
-            <artifactId>maven-svn-wagon</artifactId>
-            <version>1.4</version>
-          </dependency>
-        </dependencies>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>com.googlecode.maven-gcu-plugin</groupId>
-        <artifactId>maven-gcu-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>googlecode-upload</id>
-            <phase>deploy</phase>
-            <goals>
-              <goal>upload</goal>
-            </goals>
-            <configuration>
-              <failsOnError>true</failsOnError>
-              <projectName>${project.artifactId}</projectName>
-              <uploads>
-                <upload>
-                  <file>${project.build.directory}/${project.build.finalName}.zip</file>
-                  <summary>${project.name} ${project.version} package</summary>
-                  <labels>
-                    <label>Featured</label>
-                    <label>Type-Archive</label>
-                  </labels>
-                </upload>
-              </uploads>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
