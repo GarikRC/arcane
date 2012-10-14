@@ -4,7 +4,7 @@
   <groupId>com.googlecode.arcane.proxy</groupId>
   <artifactId>proxy-printer</artifactId>
   <name>proxy-printer</name>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <description>Proxy Printer will get proxies from magiccards.info and assembly them into a web page.</description>
   <url>https://code.google.com/p/arcane/</url>
   <prerequisites>
