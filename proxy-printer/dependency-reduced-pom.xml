@@ -37,8 +37,9 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:svn:https://arcane.googlecode.com/svn/trunk/proxy-printer</connection>
+    <connection>scm:svn:http://arcane.googlecode.com/svn/trunk/proxy-printer</connection>
     <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/proxy-printer</developerConnection>
+    <url>http://arcane.googlecode.com/svn/trunk/proxy-printer/</url>
   </scm>
   <organization>
     <name>Proxy Printer</name>
