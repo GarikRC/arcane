@@ -221,7 +221,7 @@
                 <artifactId>maven-source-plugin</artifactId>
                 <version>2.1.2</version>
             </plugin>
-            <plugin>
+            <!--   <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>1.5</version>
@@ -247,7 +247,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
@@ -264,7 +264,7 @@
                 </dependencies>
             </plugin>
 
-            <plugin>
+            <!--    <plugin>
                 <groupId>com.googlecode.maven-gcu-plugin</groupId>
                 <artifactId>maven-gcu-plugin</artifactId>
                 <version>1.1</version>
@@ -277,9 +277,7 @@
                         </goals>
                         <configuration>
                             <failsOnError>true</failsOnError>
-                            <!-- default: false -->
                             <projectName>arcane</projectName>
-                            <!-- default: ${project.artifactId} -->
                             <uploads>
                                 <upload>
                                     <file>
@@ -305,7 +303,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
         </plugins>
 
         <pluginManagement>
@@ -453,7 +451,7 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-
+    <!--
     <profiles>
         <profile>
             <id>osx</id>
@@ -479,7 +477,6 @@
                                 <phase>package</phase>
                                 <configuration>
                                     <tasks>
-                                        <!-- OSX archive -->
                                         <mkdir dir="${project.build.directory}/${project.build.finalName}-osx" />
                                         <copy todir="${project.build.directory}/${project.build.finalName}-osx">
                                             <fileset dir="${basedir}" includes="LICENSE.txt" />
@@ -507,5 +504,5 @@
                 </plugins>
             </build>
         </profile>
-    </profiles>
+    </profiles> -->
 </project>
