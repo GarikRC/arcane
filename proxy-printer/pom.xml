@@ -23,7 +23,6 @@
     <scm>
         <connection>scm:svn:https://arcane.googlecode.com/svn/trunk/proxy-printer</connection>
         <developerConnection>scm:svn:https://arcane.googlecode.com/svn/trunk/proxy-printer</developerConnection>
-        <url>https://code.google.com/p/arcane/source/browse/#svn%2Ftrunk%2Fproxy-printer</url>
     </scm>
 
     <properties>
@@ -424,36 +423,4 @@
             </plugin>
         </plugins>
     </reporting>
-
-    <distributionManagement>
-        <repository>
-            <id>googlecode</id>
-            <name>Arcane</name>
-            <url>svn:https://arcane.googlecode.com/svn/trunk/repository</url>
-        </repository>
-    </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>arcane-maven-repo</id>
-            <name>Arcane Maven Repository</name>
-            <layout>default</layout>
-            <url>http://arcane.googlecode.com/svn/trunk/repository</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>arcane-maven-repo</id>
-            <name>Arcane Maven Repository</name>
-            <layout>default</layout>
-            <url>http://arcane.googlecode.com/svn/trunk/repository</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 </project>
